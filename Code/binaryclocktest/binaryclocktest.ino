@@ -11,8 +11,8 @@ http://www.instructables.com/id/Full-Binary-Clock/step6/The-Code/
 #define bit2 11 //arduino pin 11, atmega pin 17
 #define bit4 12 //arduino pin 12, atmega pin 18
 #define bit8 13 //arduino pin 13, atmega pin 19
-#define hourButton 0 //arduino pin 0, atmega pin 2
-#define minButton 1 //arduino pin 1, atmega pin 3
+#define hourButton 2 //arduino pin 0, atmega pin 2
+#define minButton 3 //arduino pin 1, atmega pin 3
 
 
 
@@ -36,9 +36,9 @@ void mux(int muxa2, int muxa1, int muxa0){
   
 }
 
-int secOne=0, minOne=0, hourOne=0;
-int secTen=0, minTen=0, hourTen=0;
-int configTime = 950; //260 seems about right for simulation, 1000 for circuit?
+int secOne=1, minOne=3, hourOne=0;
+int secTen=1, minTen=2, hourTen=0;
+int configTime = 300; //260 seems about right for simulation, 1000 for circuit?
 
 
 void columns(int columnNum)
@@ -250,6 +250,7 @@ void columns(int columnNum)
   }
    
 }
+
 void showTime(){
   int temp = 10;
   mux(1,1,1); //turn off
@@ -310,21 +311,29 @@ void row(byte one1, byte two2, byte four4, byte eight8){
 
 int minButtonState = 0;
 int hourButtonState = 0;
+
 void loop() {
+  //delay(500);
   minButtonState = digitalRead(minButton);
   hourButtonState = digitalRead(hourButton);
   
   static unsigned long lastSecond = 0;
   
-  if (minButtonState == HIGH) {
+  if (minButtonState == HIGH && minButtonFlag != 1) {
     minOne++;
-    delay(250);
+    minButtonFlag = 1;
+  }
+  
+  if (hourButtonState == HIGH && hourButtonFlag != 1) {   
+    hourOne++;
+    hourButtonFlag = 1;
+  }
+  
+  if (millis() - lastSecon >= quarterSec) {
+    hourButtonFlag = 0;
+    minButtonFlag = 0;
+    }
     
-  }
-  if (hourButtonState == HIGH) {   
-    hourOne++;  
-    delay(250);
-  }
   else if (minButtonState == LOW && hourButtonState == LOW) {
     if (millis() - lastSecond >= configTime) {
     lastSecond = millis();
