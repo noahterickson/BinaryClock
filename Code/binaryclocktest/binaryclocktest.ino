@@ -14,10 +14,18 @@ http://www.instructables.com/id/Full-Binary-Clock/step6/The-Code/
 #define hourButton 2 //arduino pin 0, atmega pin 2
 #define minButton 3 //arduino pin 1, atmega pin 3
 
+#include <avr/interrupt.h>
+
 
 
 void setup() {
   // put your setup code here, to run once:
+  // Enable global interrupts
+  SREG |= (1 << 7);
+  // Interrupt on rising edge for pins 1,0 (pg. 71)
+  EICRA |= (1 << ISC11) | (1 << ISC10) | (ISC01) | (ISC00);
+  // Enable interrupts on INT0,INT1 (pins 3,4)
+  EIMSK |= (1 << INT1) | (1 << INT0);
   pinMode(hourButton, INPUT);
   pinMode(minButton, INPUT);
   pinMode(mux0, OUTPUT);
@@ -34,6 +42,14 @@ void mux(int muxa2, int muxa1, int muxa0){
   digitalWrite(mux1, muxa1);
   digitalWrite(mux2, muxa2);
   
+}
+
+ISR(INT0_vect) {
+  hourOne++;
+}
+
+ISR(INT1_vect) {
+  minOne++;
 }
 
 int secOne=1, minOne=3, hourOne=0;
@@ -319,7 +335,7 @@ void loop() {
   
   static unsigned long lastSecond = 0;
   
-  if (minButtonState == HIGH && minButtonFlag != 1) {
+  /*if (minButtonState == HIGH && minButtonFlag != 1) {
     minOne++;
     minButtonFlag = 1;
   }
@@ -329,10 +345,10 @@ void loop() {
     hourButtonFlag = 1;
   }
   
-  if (millis() - lastSecon >= quarterSec) {
+  if (millis() - lastSecond >= quarterSec) {
     hourButtonFlag = 0;
     minButtonFlag = 0;
-    }
+    }*/
     
   else if (minButtonState == LOW && hourButtonState == LOW) {
     if (millis() - lastSecond >= configTime) {
