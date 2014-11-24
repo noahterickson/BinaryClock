@@ -17,8 +17,21 @@ http://www.instructables.com/id/Full-Binary-Clock/step6/The-Code/
 #include <avr/interrupt.h>
 
 
+// Function that printf and related will use to print
+int serial_putchar(char c, FILE* f) {
+    if (c == '\n') serial_putchar('\r', f);
+    return Serial.write(c) == 1? 0 : 1;
+}
 
-void setup() {
+FILE serial_stdout;
+
+void setup(){
+    Serial.begin(9600);
+
+    // Set up stdout
+    fdev_setup_stream(&serial_stdout, serial_putchar, NULL, _FDEV_SETUP_WRITE);
+    stdout = &serial_stdout;
+
   // put your setup code here, to run once:
   // Enable global interrupts
   SREG |= (1 << 7);
@@ -26,6 +39,9 @@ void setup() {
   EICRA |= (1 << ISC11) | (1 << ISC10) | (ISC01) | (ISC00);
   // Enable interrupts on INT0,INT1 (pins 3,4)
   EIMSK |= (1 << INT1) | (1 << INT0);
+  
+  Serial.begin(9600);
+  
   pinMode(hourButton, INPUT);
   pinMode(minButton, INPUT);
   pinMode(mux0, OUTPUT);
@@ -44,6 +60,10 @@ void mux(int muxa2, int muxa1, int muxa0){
   
 }
 
+int secOne=1, minOne=3, hourOne=0;
+int secTen=1, minTen=2, hourTen=0;
+int configTime = 1000; //260 seems about right for simulation, 1000 for circuit?
+
 ISR(INT0_vect) {
   hourOne++;
 }
@@ -51,11 +71,6 @@ ISR(INT0_vect) {
 ISR(INT1_vect) {
   minOne++;
 }
-
-int secOne=1, minOne=3, hourOne=0;
-int secTen=1, minTen=2, hourTen=0;
-int configTime = 300; //260 seems about right for simulation, 1000 for circuit?
-
 
 void columns(int columnNum)
 {
@@ -316,6 +331,7 @@ void showTime(){
   mux(1,0,1); //for seconds ones
   columns(0);
   delayMicroseconds(temp); 
+    
 }
 
 void row(byte one1, byte two2, byte four4, byte eight8){
@@ -325,37 +341,18 @@ void row(byte one1, byte two2, byte four4, byte eight8){
   digitalWrite(bit8, eight8);
 }
 
-int minButtonState = 0;
-int hourButtonState = 0;
-
 void loop() {
-  //delay(500);
-  minButtonState = digitalRead(minButton);
-  hourButtonState = digitalRead(hourButton);
   
   static unsigned long lastSecond = 0;
   
-  /*if (minButtonState == HIGH && minButtonFlag != 1) {
-    minOne++;
-    minButtonFlag = 1;
-  }
-  
-  if (hourButtonState == HIGH && hourButtonFlag != 1) {   
-    hourOne++;
-    hourButtonFlag = 1;
-  }
-  
-  if (millis() - lastSecond >= quarterSec) {
-    hourButtonFlag = 0;
-    minButtonFlag = 0;
-    }*/
+
     
-  else if (minButtonState == LOW && hourButtonState == LOW) {
-    if (millis() - lastSecond >= configTime) {
+  if (millis() - lastSecond >= configTime) {
     lastSecond = millis();
+    printf("%d%d:%d%d:%d%d\n",hourTen, hourOne, minTen, minOne, secTen, secOne);
+
     secOne++;
     }
-  }
  
   
   if (secOne > 9) {
@@ -388,7 +385,9 @@ void loop() {
     hourOne = 0;
     
   }
+  
 
+  
   showTime();
 }
 
