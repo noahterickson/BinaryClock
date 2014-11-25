@@ -9420,64 +9420,64 @@ SMT- SWCH-08247</description>
 <parts>
 <part name="FRAME1" library="frames" deviceset="FRAME_B_L" device=""/>
 <part name="IC1" library="linear" deviceset="78*" device="TV" technology="05" value="7805TV"/>
-<part name="C1" library="rcl" deviceset="C-EU" device="025-024X044" value="33u"/>
-<part name="C2" library="rcl" deviceset="C-EU" device="025-024X044" value="10u"/>
+<part name="C1" library="rcl" deviceset="C-EU" device="C1206" value="33u"/>
+<part name="C2" library="rcl" deviceset="C-EU" device="C1206" value="10u"/>
 <part name="GND1" library="supply1" deviceset="GND" device=""/>
 <part name="U1" library="SparkFun-DigitalIC" deviceset="ATMEGA328P_PDIP" device=""/>
-<part name="RVCC" library="rcl" deviceset="R-US_" device="M3516" value="10k"/>
+<part name="RVCC" library="rcl" deviceset="R-US_" device="R1206" value="10k"/>
 <part name="GND3" library="supply1" deviceset="GND" device=""/>
 <part name="P+3" library="supply1" deviceset="+5V" device=""/>
 <part name="JP1" library="SparkFun-Connectors" deviceset="USB" device="-MICROB"/>
 <part name="GND4" library="supply1" deviceset="GND" device=""/>
 <part name="Q1" library="SparkFun-DiscreteSemi" deviceset="MOSFET-NCHANNEL" device="BSS138"/>
-<part name="R1" library="rcl" deviceset="R-US_" device="M3516" value="150"/>
-<part name="R1B" library="rcl" deviceset="R-US_" device="M3516" value="4.7k"/>
-<part name="LED1" library="led" deviceset="LED" device="SMT1206"/>
+<part name="R1" library="rcl" deviceset="R-US_" device="R1206" value="150"/>
+<part name="R1B" library="rcl" deviceset="R-US_" device="R1206" value="4.7k"/>
+<part name="LED1" library="led" deviceset="LED" device="3MM"/>
 <part name="IC2" library="74xx-eu" deviceset="74*138" device="D" technology="AC"/>
-<part name="R2" library="rcl" deviceset="R-US_" device="M3516" value="150"/>
-<part name="LED2" library="led" deviceset="LED" device="SMT1206"/>
-<part name="R3" library="rcl" deviceset="R-US_" device="M3516" value="150"/>
-<part name="LED3" library="led" deviceset="LED" device="SMT1206"/>
+<part name="R2" library="rcl" deviceset="R-US_" device="R1206" value="150"/>
+<part name="LED2" library="led" deviceset="LED" device="3MM"/>
+<part name="R3" library="rcl" deviceset="R-US_" device="R1206" value="150"/>
+<part name="LED3" library="led" deviceset="LED" device="3MM"/>
 <part name="Q2" library="SparkFun-DiscreteSemi" deviceset="MOSFET-NCHANNEL" device="BSS138"/>
-<part name="R7" library="rcl" deviceset="R-US_" device="M3516" value="150"/>
-<part name="R2B" library="rcl" deviceset="R-US_" device="M3516" value="4.7k"/>
-<part name="LED7" library="led" deviceset="LED" device="SMT1206"/>
-<part name="R8" library="rcl" deviceset="R-US_" device="M3516" value="150"/>
-<part name="LED8" library="led" deviceset="LED" device="SMT1206"/>
-<part name="R9" library="rcl" deviceset="R-US_" device="M3516" value="150"/>
-<part name="LED9" library="led" deviceset="LED" device="SMT1206"/>
-<part name="R4" library="rcl" deviceset="R-US_" device="M3516" value="150"/>
-<part name="LED4" library="led" deviceset="LED" device="SMT1206"/>
-<part name="R5" library="rcl" deviceset="R-US_" device="M3516" value="150"/>
-<part name="LED5" library="led" deviceset="LED" device="SMT1206"/>
-<part name="R6" library="rcl" deviceset="R-US_" device="M3516" value="150"/>
-<part name="LED6" library="led" deviceset="LED" device="SMT1206"/>
-<part name="R10" library="rcl" deviceset="R-US_" device="M3516" value="150"/>
-<part name="LED10" library="led" deviceset="LED" device="SMT1206"/>
-<part name="R11" library="rcl" deviceset="R-US_" device="M3516" value="150"/>
-<part name="LED11" library="led" deviceset="LED" device="SMT1206"/>
-<part name="R12" library="rcl" deviceset="R-US_" device="M3516" value="150"/>
-<part name="LED12" library="led" deviceset="LED" device="SMT1206"/>
+<part name="R7" library="rcl" deviceset="R-US_" device="R1206" value="150"/>
+<part name="R2B" library="rcl" deviceset="R-US_" device="R1206" value="4.7k"/>
+<part name="LED7" library="led" deviceset="LED" device="3MM"/>
+<part name="R8" library="rcl" deviceset="R-US_" device="R1206" value="150"/>
+<part name="LED8" library="led" deviceset="LED" device="3MM"/>
+<part name="R9" library="rcl" deviceset="R-US_" device="R1206" value="150"/>
+<part name="LED9" library="led" deviceset="LED" device="3MM"/>
+<part name="R4" library="rcl" deviceset="R-US_" device="R1206" value="150"/>
+<part name="LED4" library="led" deviceset="LED" device="3MM"/>
+<part name="R5" library="rcl" deviceset="R-US_" device="R1206" value="150"/>
+<part name="LED5" library="led" deviceset="LED" device="3MM"/>
+<part name="R6" library="rcl" deviceset="R-US_" device="R1206" value="150"/>
+<part name="LED6" library="led" deviceset="LED" device="3MM"/>
+<part name="R10" library="rcl" deviceset="R-US_" device="R1206" value="150"/>
+<part name="LED10" library="led" deviceset="LED" device="3MM"/>
+<part name="R11" library="rcl" deviceset="R-US_" device="R1206" value="150"/>
+<part name="LED11" library="led" deviceset="LED" device="3MM"/>
+<part name="R12" library="rcl" deviceset="R-US_" device="R1206" value="150"/>
+<part name="LED12" library="led" deviceset="LED" device="3MM"/>
 <part name="Q3" library="SparkFun-DiscreteSemi" deviceset="MOSFET-NCHANNEL" device="BSS138"/>
-<part name="R13" library="rcl" deviceset="R-US_" device="M3516" value="150"/>
-<part name="R3B" library="rcl" deviceset="R-US_" device="M3516" value="4.7k"/>
-<part name="LED13" library="led" deviceset="LED" device="SMT1206"/>
+<part name="R13" library="rcl" deviceset="R-US_" device="R1206" value="150"/>
+<part name="R3B" library="rcl" deviceset="R-US_" device="R1206" value="4.7k"/>
+<part name="LED13" library="led" deviceset="LED" device="3MM"/>
 <part name="Q4" library="SparkFun-DiscreteSemi" deviceset="MOSFET-NCHANNEL" device="BSS138"/>
-<part name="R18" library="rcl" deviceset="R-US_" device="M3516" value="150"/>
-<part name="R4B" library="rcl" deviceset="R-US_" device="M3516" value="4.7k"/>
-<part name="LED18" library="led" deviceset="LED" device="SMT1206"/>
-<part name="R14" library="rcl" deviceset="R-US_" device="M3516" value="150"/>
-<part name="LED14" library="led" deviceset="LED" device="SMT1206"/>
-<part name="R15" library="rcl" deviceset="R-US_" device="M3516" value="150"/>
-<part name="LED15" library="led" deviceset="LED" device="SMT1206"/>
-<part name="R19" library="rcl" deviceset="R-US_" device="M3516" value="150"/>
-<part name="LED19" library="led" deviceset="LED" device="SMT1206"/>
-<part name="R16" library="rcl" deviceset="R-US_" device="M3516" value="150"/>
-<part name="LED16" library="led" deviceset="LED" device="SMT1206"/>
-<part name="R17" library="rcl" deviceset="R-US_" device="M3516" value="150"/>
-<part name="LED17" library="led" deviceset="LED" device="SMT1206"/>
-<part name="R20" library="rcl" deviceset="R-US_" device="M3516" value="150"/>
-<part name="LED20" library="led" deviceset="LED" device="SMT1206"/>
+<part name="R18" library="rcl" deviceset="R-US_" device="R1206" value="150"/>
+<part name="R4B" library="rcl" deviceset="R-US_" device="R1206" value="4.7k"/>
+<part name="LED18" library="led" deviceset="LED" device="3MM"/>
+<part name="R14" library="rcl" deviceset="R-US_" device="R1206" value="150"/>
+<part name="LED14" library="led" deviceset="LED" device="3MM"/>
+<part name="R15" library="rcl" deviceset="R-US_" device="R1206" value="150"/>
+<part name="LED15" library="led" deviceset="LED" device="3MM"/>
+<part name="R19" library="rcl" deviceset="R-US_" device="R1206" value="150"/>
+<part name="LED19" library="led" deviceset="LED" device="3MM"/>
+<part name="R16" library="rcl" deviceset="R-US_" device="R1206" value="150"/>
+<part name="LED16" library="led" deviceset="LED" device="3MM"/>
+<part name="R17" library="rcl" deviceset="R-US_" device="R1206" value="150"/>
+<part name="LED17" library="led" deviceset="LED" device="3MM"/>
+<part name="R20" library="rcl" deviceset="R-US_" device="R1206" value="150"/>
+<part name="LED20" library="led" deviceset="LED" device="3MM"/>
 <part name="P+1" library="supply1" deviceset="+5V" device=""/>
 <part name="P+4" library="supply1" deviceset="+5V" device=""/>
 <part name="P+16" library="supply1" deviceset="+5V" device=""/>
@@ -9493,18 +9493,18 @@ SMT- SWCH-08247</description>
 <part name="GND2" library="supply1" deviceset="GND" device=""/>
 <part name="S1" library="SparkFun-Electromechanical" deviceset="TAC_SWITCH" device="SMD" value="TAC_SWITCHSMD"/>
 <part name="S2" library="SparkFun-Electromechanical" deviceset="TAC_SWITCH" device="SMD" value="TAC_SWITCHSMD"/>
-<part name="R1B1" library="rcl" deviceset="R-US_" device="M3516" value="4.7k"/>
-<part name="R1B2" library="rcl" deviceset="R-US_" device="M3516" value="4.7k"/>
+<part name="R1B1" library="rcl" deviceset="R-US_" device="R1206" value="4.7k"/>
+<part name="R1B2" library="rcl" deviceset="R-US_" device="R1206" value="4.7k"/>
 <part name="GND7" library="supply1" deviceset="GND" device=""/>
 <part name="GND8" library="supply1" deviceset="GND" device=""/>
 <part name="P+2" library="supply1" deviceset="+5V" device=""/>
 <part name="P+5" library="supply1" deviceset="+5V" device=""/>
 <part name="JP2" library="SparkFun-Connectors" deviceset="FTDI_BASIC" device="PTH"/>
-<part name="C3" library="rcl" deviceset="C-EU" device="025-024X044" value="10u"/>
+<part name="C3" library="rcl" deviceset="C-EU" device="C1206" value="10u"/>
 <part name="GND13" library="supply1" deviceset="GND" device=""/>
 <part name="Q5" library="special" deviceset="XTAL/S" device="" value="16M"/>
-<part name="C4" library="rcl" deviceset="C-EU" device="025-024X044" value="18p"/>
-<part name="C5" library="rcl" deviceset="C-EU" device="025-024X044" value="18p"/>
+<part name="C4" library="rcl" deviceset="C-EU" device="C1206" value="18p"/>
+<part name="C5" library="rcl" deviceset="C-EU" device="C1206" value="18p"/>
 </parts>
 <sheets>
 <sheet>
